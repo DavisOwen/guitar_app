@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Counters from "./components/counters"
 import NavBar from "./components/navbar";
+import String from "./components/string";
 
 class App extends Component {
 
@@ -10,18 +11,11 @@ class App extends Component {
            { id: 2, value: 0 },
            { id: 3, value: 0 },
            { id: 4, value: 0 }
-        ]
+        ],
+
+        strings: ["E4", "B3", "G3", "D3", "A2", "E2"]
+
     };
-
-    constructor(props) {
-        super(props);
-        console.log("App - Constructor");
-    }
-
-    componentDidMount(){
-        console.log("App - Mounted");
-        //this.setState({ movies });
-    }
 
     handleIncrement = counter => {
         const counters = [...this.state.counters];
@@ -45,20 +39,24 @@ class App extends Component {
     };
 
     render() {
-       console.log("App - Rendered");
 
-       return (
-            <React.Fragment>
-                <NavBar totalCounters={this.state.counters.filter(c => c.value > 0).length} />
-                <main className="container">
-                    <Counters 
-                            counters={this.state.counters}
-                            onReset={this.handleReset} 
-                            onIncrement={this.handleIncrement}
-                            onDelete={this.handleDelete}/>
-                </main>
-            </React.Fragment>
-       );
+        return(
+            <div className="container h-100 d-flex justify-content-center">
+                <div className="container my-auto"> 
+
+                    {this.state.strings.map(string =>
+                    
+                       <String 
+                            key={string}
+                            note={string}>
+                        </String>
+                        
+                    )}
+
+                </div>
+            </div>
+        );
+
     };
 };
 
