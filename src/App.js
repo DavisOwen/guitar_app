@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Counters from "./components/counters"
 import NavBar from "./components/navbar";
 import String from "./components/string";
+import Tone from "tone";
 
 class App extends Component {
 
@@ -16,6 +17,16 @@ class App extends Component {
         strings: ["E4", "B3", "G3", "D3", "A2", "E2"]
 
     };
+
+    constructor(){
+        super();
+        this.synth = new Tone.Synth().toMaster();
+    }
+
+    playNote = (note) => {
+        this.synth.triggerAttackRelease(note, "8n");
+        console.log(note);
+    }
 
     handleIncrement = counter => {
         const counters = [...this.state.counters];
@@ -48,7 +59,8 @@ class App extends Component {
                     
                        <String 
                             key={string}
-                            note={string}>
+                            note={string}
+                            playNote={this.playNote}>
                         </String>
                         
                     )}
