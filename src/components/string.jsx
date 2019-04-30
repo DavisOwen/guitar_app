@@ -19,7 +19,8 @@ class String extends Component{
                 j = 0;
             }
         };
-        this.state = { notes: string_notes };
+        this.state = { notes: string_notes, 
+                        id: props.id};
     }
 
     render(){
@@ -29,7 +30,9 @@ class String extends Component{
                 <Fret 
                     key={note}
                     note={note}
-                    playNote={this.props.playNote}>
+                    id={this.state.id++}
+                    playNote={this.props.playNote}
+                    keypress={this.props.keypress}>
                 </Fret>
             )}
             </div>
