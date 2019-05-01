@@ -44,7 +44,6 @@ class App extends Component {
                 let key = keys[i + (idx * 12)];
                 let note = notes[j] + octave;
                 let id = (keyMap * 24) + (idx * 12) + (i + 1);
-                console.log(key, note, id);
                 Mousetrap.bind([key], () => this.playNote(note, id));
                 if(++j > 11){
                     octave++;

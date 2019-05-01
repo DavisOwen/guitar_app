@@ -1,3 +1,7 @@
+body{
+    background-image: linear-gradient(to bottom right, white, gray);
+}
+
 .fret {
     border: 1px solid black;
     height: 50px;
@@ -24,4 +28,22 @@
     background:white;
     margin: 0 auto;
     opacity: 0;
+}
+
+.howTo{
+    margin: 0 auto;
+}
+
+.header {
+    background: none;
+    margin: 0 auto;
+}
+
+.desc {
+    margin: 0 auto;
+}
+
+.title {
+    font-family: "Gugi", cursive !important;
+    font-size:80px;
 }

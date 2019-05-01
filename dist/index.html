@@ -1,15 +1,39 @@
 <html>
-    <div class="container-fluid">
-        <div class="row no-gutters">
-            <div class="container col-2 h-100 d-flex">
+    <head>
+        <title>Virtual Guitar</title>
+        <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">    
+    </head>
+    <body>
+        <div class="jumbotron text-center header">
+            <h1 class="title">Virtual Guitar</h1>
+        </div>
+        <div class="container-fluid">
+            <div class="row no-gutter"> 
+                <h2 class="howTo">How To Use</h2>
             </div>
-            <div class="col-8 h-100 d-flex">
-                <div class="container-fluid my-auto">
-                    <div id="root"></div>
+            <div class="row no-gutter">
+                <div class="desc text-center">
+                    <p>Click on fret to play that note</p>
+                    <p>To play with keys:</p>
+                    <ul>
+                        <li>`1`-`=`: Top String</li>
+                        <li>`q`-`]`: Second String</li>
+                        <li>`x`: Move To Lower Strings</li>
+                        <li>`z`: Move to Higher Strings</li>
+                    </ul>
                 </div>
             </div>
-            <div class="col-2"></div>
+            <div class="row no-gutters">
+                <div class="container col-2">
+                </div>
+                <div class="col-8">
+                    <div class="container-fluid my-auto">
+                        <div id="root"></div>
+                    </div>
+                </div>
+                <div class="col-2"></div>
+            </div>
         </div>
-    </div>
+    </body>
     <script src="./bundle.js"></script>
 </html>
