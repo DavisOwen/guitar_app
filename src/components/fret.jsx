@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import Tone from "tone";
+import Mousetrap from "mousetrap";
 
 class Fret extends Component {
 
     state = {
-        note: this.props.note
+
+        note: this.props.note,
+
     }
 
     constructor(props){
